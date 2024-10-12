@@ -1,0 +1,16 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+        int dem=0,dem2=0;
+        for(int i=0;i<nums.length;i++){
+          while(nums[i]!=0){
+              nums[i]=nums[i]/10;
+              dem++;
+          }
+            if(dem%2==0){
+               dem2++;
+            }
+             dem=0;
+        } 
+        return dem2;
+    }
+}
