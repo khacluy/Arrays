@@ -1,0 +1,26 @@
+/**
+ * @param {number[]} heights
+ * @return {number}
+ */
+var heightChecker = function (heights) {
+  let newarr = [];
+  for (let i = 0; i < heights.length; i++) {
+    newarr.push(heights[i]);
+  }
+  for (let i = 0; i < heights.length; i++) {
+    for (let j = i + 1; j < heights.length; j++) {
+      if (heights[i] > heights[j]) {
+        let temp = heights[j];
+        heights[j] = heights[i];
+        heights[i] = temp;
+      }
+    }
+  }
+  let dem=0;
+  for(let i=0;i<heights.length;i++){
+    if(heights[i]!=newarr[i]){
+        dem++;
+    }
+  }
+  return dem;
+};
